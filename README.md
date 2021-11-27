@@ -7,6 +7,13 @@
     "build": "npm run build",
   }
 ```
+## Tech
+```bash
+    React,
+    SCSS,
+    Redux,
+    Redux-Persist
+```
 ## Live Project
 ```bash
 See Live:
