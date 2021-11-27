@@ -1,0 +1,185 @@
+///color variables
+$bg-primary: #FBB1B1;
+$bg-secondary: #FAF7F7;
+$bg-tertiary: #F9E6E6;
+$bg-white: #FFF;
+$color-primary: #8D4040;
+$color-secondary: #B08B8B;
+$color-tertiary: #D48282;
+
+/// font-sizes
+$font-primary: 16px;
+$font-dd: 44px;
+
+/// line-heights
+$height-primary: 19px;
+$height-dd: 52px;
+
+// font-weight
+$weight-dd: bold;
+
+///font-family
+$family: Roboto, sans-serif;
+
+/// Border radius
+$radius-primary: 5px;
+$radius-secondary: 3px;
+$radius-circle: 100%;
+
+.App {
+    background-color: $bg-primary;
+    font-family: $family;
+    color: $color-primary;
+    width: 100vw;
+    height: 100vh;
+}
+
+.main-container {
+    width: 26.04vw;
+    height: 74.07vh;
+    margin: auto;
+    top: 12.9vh;
+    position: relative;
+    background-color: $bg-white;
+    border: 1px solid $color-tertiary;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2);
+    border-radius: $radius-primary;
+    padding: 1.67vh 1.66vw 0 1.66vw;
+    overflow: auto;
+}
+@media only screen and (max-width: 1180px) {
+    .main-container {
+        width: 50vw;
+    }
+  }
+@media only screen and (max-width: 450px) {
+    .main-container {
+        width: 75vw;
+    }
+  }
+
+.todo-container {
+    top: 2.6vh;
+    box-sizing: border-box;
+}
+
+.todo {
+    height: 2.6vh;
+    position: relative;
+    display: flex;
+    margin: auto;
+    margin-bottom: 1rem;
+    background-color: $bg-secondary;
+    padding: 1rem 0.75rem 1rem 1rem;
+    font-size: $font-primary;
+    line-height: $height-primary;
+    border-radius: $radius-secondary;
+}
+
+.todo p {
+    margin-top: 0;
+}
+
+
+.new-todo {
+    width: 100%;
+    padding: 1rem 3.563rem 1rem 1rem;
+    background-color: $bg-secondary;
+    font-size: $font-primary;
+    line-height: $height-primary;
+    border-radius: $radius-secondary;
+    border: none;
+    box-sizing: border-box;
+    outline: none;
+    color: $color-primary;
+}
+
+.new-todo::placeholder {
+    color: $color-secondary;
+}
+
+.date-container {
+    display: flex;
+    color: $color-tertiary;
+    font-weight: $weight-dd;
+}
+
+.date-day {
+    font-size: $font-dd;
+    line-height: $height-dd;
+    margin-top: 0.7rem;
+}
+
+.date-year {
+    margin-top: -1rem;
+}
+
+.left-05 {
+    margin-left: 0.5rem;
+}
+
+.d-none {
+    display: none;
+}
+
+.dayname {
+    top: 0.5rem;
+    right: 0;
+    position: absolute;
+}
+
+
+/*//// custom checkbox /////*/
+.round input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  .checkmark {
+    position: absolute;
+    right: 0.813rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    background-color: white;
+    border: 1px solid $bg-tertiary;
+    border-radius: $radius-circle;
+    box-sizing: border-box;
+  }
+  
+  .round:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  .round input:checked ~ .checkmark {
+    background-color: $color-tertiary;
+  }
+  
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .round input:checked ~ .checkmark:after {
+    display: block;
+    margin-top: -0.1rem;
+    margin-left: -0.15rem;
+  }
+  
+  /* Style the checkmark/indicator */
+  .round .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }

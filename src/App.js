@@ -1,23 +1,48 @@
-import logo from './logo.svg';
+import React, { useState } from "react";
 import './App.css';
+import DateSelect from './components/dateSelect/dateSelect';
+import ToDoInput from './components/input/input';
+import Todo from './components/todo/todo';
+
+import { useSelector } from 'react-redux'
+import { selectTodoList } from './store/todoSlice'
 
 function App() {
+  ///State for keep date
+  const [date, setDate] = useState()
+
+  ///Getting todolist from redux
+  const todoList = useSelector(selectTodoList)
+
+  ///Callback function for getting date from dateselector
+  const handleCallback = (s) => {
+    setDate(s.toString().slice(0, 15))
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <div className="main-container">
+
+        <DateSelect handleCallback={handleCallback} />
+
+        <div className="todo-container">
+
+          {todoList.filter(prevState => prevState.selectedDate === date).map(item => (
+            <Todo
+              name={item.name}
+              done={item.done}
+              id={item.id} />
+          ))}
+
+          <ToDoInput
+            date={date}
+          />
+
+        </div>
+
+      </div>
+      
     </div>
   );
 }

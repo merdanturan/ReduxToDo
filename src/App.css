@@ -1,38 +1,178 @@
 .App {
-  text-align: center;
+  background-color: #FBB1B1;
+  font-family: Roboto, sans-serif;
+  color: #8D4040;
+  width: 100vw;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main-container {
+  width: 26.04vw;
+  height: 74.07vh;
+  margin: auto;
+  top: 12.9vh;
+  position: relative;
+  background-color: #FFF;
+  border: 1px solid #D48282;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 1.67vh 1.66vw 0 1.66vw;
+  overflow: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media only screen and (max-width: 1180px) {
+  .main-container {
+    width: 50vw;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@media only screen and (max-width: 450px) {
+  .main-container {
+    width: 75vw;
+  }
+}
+
+.todo-container {
+  top: 2.6vh;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.todo {
+  height: 2.6vh;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: auto;
+  margin-bottom: 1rem;
+  background-color: #FAF7F7;
+  padding: 1rem 0.75rem 1rem 1rem;
+  font-size: 16px;
+  line-height: 19px;
+  border-radius: 3px;
 }
 
-.App-link {
-  color: #61dafb;
+.todo p {
+  margin-top: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.new-todo {
+  width: 100%;
+  padding: 1rem 3.563rem 1rem 1rem;
+  background-color: #FAF7F7;
+  font-size: 16px;
+  line-height: 19px;
+  border-radius: 3px;
+  border: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+  color: #8D4040;
 }
+
+.new-todo::-webkit-input-placeholder {
+  color: #B08B8B;
+}
+
+.new-todo:-ms-input-placeholder {
+  color: #B08B8B;
+}
+
+.new-todo::-ms-input-placeholder {
+  color: #B08B8B;
+}
+
+.new-todo::placeholder {
+  color: #B08B8B;
+}
+
+.date-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #D48282;
+  font-weight: bold;
+}
+
+.date-day {
+  font-size: 44px;
+  line-height: 52px;
+  margin-top: 0.7rem;
+}
+
+.date-year {
+  margin-top: -1rem;
+}
+
+.left-05 {
+  margin-left: 0.5rem;
+}
+
+.d-none {
+  display: none;
+}
+
+.dayname {
+  top: 0.5rem;
+  right: 0;
+  position: absolute;
+}
+
+/*//// custom checkbox /////*/
+.round input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  right: 0.813rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: white;
+  border: 1px solid #F9E6E6;
+  border-radius: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.round:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.round input:checked ~ .checkmark {
+  background-color: #D48282;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.round input:checked ~ .checkmark:after {
+  display: block;
+  margin-top: -0.1rem;
+  margin-left: -0.15rem;
+}
+
+/* Style the checkmark/indicator */
+.round .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/*# sourceMappingURL=App.css.map */
