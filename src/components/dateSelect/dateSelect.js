@@ -28,7 +28,7 @@ const DateSelect = ({handleCallback}) => {
         {value.slice(3, 5)}
       </p>
 
-      <div className="left-05">
+      <div className="left-05 mtop-2px">
 
         <p className="date-month">
           {months[value.slice(0, 2) - 1].slice(0, 3)}
