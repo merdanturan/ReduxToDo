@@ -17,7 +17,7 @@
 ## Live Project
 ```bash
 See Live:
-https://m-reduxtodo.netlify.app/
+https://m-reduxtodo.herokuapp.com/
 ```
 ## For Questions
 ```bash
